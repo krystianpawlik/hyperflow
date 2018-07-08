@@ -6,16 +6,17 @@ var S3_PATH   = process.env.S3_PATH;
 exports.amqp_url = AMQP_URL;
 
 // S3 storage
-// exports.options = {
-//     "storage": "s3",
-//     "bucket": S3_BUCKET,
-//     "prefix": S3_PATH
-// };
-
 exports.options = {
-    "storage": "local",
-    "workdir": WORKDIR
-};
+    "storage": "s3",
+    "bucket": S3_BUCKET,
+    "prefix": S3_PATH
+ };
+ 
+
+// exports.options = {
+//     "storage": "local",
+//     "workdir": WORKDIR
+// };
 
 
 // NFS storage

@@ -39,13 +39,24 @@ function amqpCommand(ins, outs, config, cb) {
               }
           }
       }
+
+      //extend options
+      var extendedOptions = {
+        ...options,
+        hfId: config.hfId,
+        wfid: config.appId,
+        procId: config.procId
+      };
+
+      //console.log("[AMQP] options! %j",options);
+
       var jobMessage = {
         "executable": config.executor.executable,
         "args":       config.executor.args,
         "env":        (config.executor.env || {}),
         "inputs":     ins.map(identity),
         "outputs":    outs.map(identity),
-        "options":    options
+        "options":    extendedOptions
       };
 
       var answer = defer();
