@@ -18,7 +18,8 @@ exports.options = {
 
 // exports.options = {
 //     "storage": "local",
-//     "workdir": WORKDIR
+//     "workdir": WORKDIR,
+//     "container": CONTAINER
 // };
 
 
